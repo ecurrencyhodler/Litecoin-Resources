@@ -1,17 +1,17 @@
 # Basic lnd Commands
 This is a list of lnd commads you can enter into the terminal window.  You can also input `$ lncli help` for a list of commands.
 
-1. [Start and Stop lnd](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#start-and-stop-lnd)
-1. [Create a Wallet](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#create-a-wallet)
-2. [Create and Fund a Bech 32 Segwit Address.](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#create-and-fund-a-segwit-address)
-3. [Connect and Open a Channel](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#connect-and-open-a-channel)
-4. [Send a Payment](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#send-a-payment)
-5. [Create an Invoice](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#create-an-invoice)
-6. [Make Your Node Public](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#make-your-node-public)
-6. [Close a Channel](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#close-a-channel)
-1. [Turn on Autoplit](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#turn-on-autopilot)
-1. [Add Node Color](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#add-node-color)
-1. [Update lnd](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#update-lnd)
+1. [Start and Stop lnd](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#start-and-stop-lnd)
+1. [Create a Wallet](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#create-a-wallet)
+2. [Create and Fund a Bech 32 Segwit Address.](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#create-and-fund-a-segwit-address)
+3. [Connect and Open a Channel](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#connect-and-open-a-channel)
+4. [Send a Payment](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#send-a-payment)
+5. [Create an Invoice](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#create-an-invoice)
+6. [Make Your Node Public](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#make-your-node-public)
+6. [Close a Channel](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#close-a-channel)
+1. [Turn on Autoplit](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#turn-on-autopilot)
+1. [Add Node Color](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#add-node-color)
+1. [Update lnd](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#update-lnd)
 
 ## Start and Stop lnd
 **Start lnd**
