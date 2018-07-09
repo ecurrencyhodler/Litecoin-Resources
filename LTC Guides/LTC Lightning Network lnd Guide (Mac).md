@@ -137,7 +137,6 @@ Fill out the lnd.conf file with what’s below.  **Make sure the rpcusername and
 ```
 [Application Options]
 debuglevel=debug
-debughtlc=true
 maxpendingchannels=10
 alias=YOUR_NODES_NAME
 
