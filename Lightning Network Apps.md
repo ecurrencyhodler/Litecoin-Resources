@@ -8,4 +8,4 @@
 
 # Lightning Network Apps for Litecoin
 
-1. https://t.me/lightningwalletbot Telegram bot that you can query for network information about LTC's Lightning Network from Strike Side's lnd node. 
+1. https://t.me/lightningwalletbot Telegram bot that you can query for network information about LTC's Lightning Network from LiteStrike's lnd node. 
