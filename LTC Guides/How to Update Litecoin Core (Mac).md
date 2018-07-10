@@ -11,7 +11,7 @@ $ make
 $ make install
 ```
 
-Or you can also manually move the binaries by yourself by following these steps:
+Another way to update Litecoin Core is by manually moving the binaries yourself:
 ```
 $ git clone  https://github.com/litecoin-project/litecoin
 $ cd litecoin
