@@ -23,7 +23,7 @@ $ cp litecoin-cli /usr/local/bin/
 ```
 
 ### To verify the correct client version
-Once you've installed it, you can make sure you're rpc commands are referencing the correct client by typing in this command:
+Once you've installed it, you can make sure your rpc commands are referencing the correct client by typing in this command:
 ```
 $ litecoin-cli --version
 ```
