@@ -153,7 +153,7 @@ litecoind.zmqpath=tcp://127.0.0.1:28332
 ```
 Save (cmd+s) and close the file.  All we have to do now is wait for litecoind to finish downloading Litecoin's blockchain.  It should take a few hours or so.  You can periodically check how much of the blockchain it's downloaded by running this command:
 ```
-$ litecoin-cli getinfo
+$ litecoin-cli getblockcount 
 ```
 Look for the "block" category.  The number displayed there must match the blockheight of the Litecoin blockchain.  You can check the current blockheight of Litecoin by going to any explorer.  You can use this one: http://explorer.litecoin.net/.  
 
