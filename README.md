@@ -8,7 +8,7 @@ This is a list of Litecoin resources for people to reference.
 1. www.reddit.com/r/litecoin
 1. www.reddit.com/r/litecoinmarkets
 1. www.electrum-ltc.org Light wallet for LTC.  
-1. www.theliteschool.com Educational content for Litecoin.
+1. www.theliteschool.com Educational Litecoin content (Newcomer Guides, Litecoin News, and Litecoin Technology).
 1. https://github.com/litecoin-project
 1. https://github.com/litecoin-foundation
 1. https://liteaddress.org/ Paper Wallet Generator.  Follow [this guide](https://theliteschool.com/lsc/how-to-create-and-spend-a-paper-wallet) to make one yourself.
