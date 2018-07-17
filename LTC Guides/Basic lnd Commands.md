@@ -231,4 +231,5 @@ $ git pull
 $ make && make install
 ```
 **For litecoind**
+
 Follow [this guide.](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/How%20to%20Update%20Litecoin%20Core%20(Mac).md)
