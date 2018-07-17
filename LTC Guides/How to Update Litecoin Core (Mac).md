@@ -27,4 +27,4 @@ Once you've installed it, you can make sure your rpc commands are referencing th
 ```
 $ litecoin-cli --version
 ```
-If it returns the newest version of Litecoin Core, it was properly installed.
+If it returns the newest version of Litecoin Core, it has been properly installed.
