@@ -12,7 +12,7 @@ This is a list of lnd commads you can enter into the terminal window.  You can a
 1. [Turn on Autoplit](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#turn-on-autopilot)
 1. [Add Node Color](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#add-node-color)
 1. [Set Routing Fees](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#set-routing-fees)
-1. [Update lnd](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#update-lnd)
+1. [Update lnd and litecoind](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#update-lnd-and-litecoind)
 
 ## Start and Stop lnd
 **Start lnd**
@@ -223,9 +223,12 @@ lncli updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=1
 lncli feereport
 ```
 
-## Update lnd
+## Update lnd and litecoind
+**For lnd**
 ```
 $ cd $GOPATH/src/github.com/lightningnetwork/lnd
 $ git pull
 $ make && make install
 ```
+**For litecoind**
+Follow [this guide.](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/How%20to%20Update%20Litecoin%20Core%20(Mac).md)
