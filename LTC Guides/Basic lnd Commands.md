@@ -11,6 +11,7 @@ This is a list of lnd commads you can enter into the terminal window.  You can a
 6. [Close a Channel](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#close-a-channel)
 1. [Turn on Autoplit](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#turn-on-autopilot)
 1. [Add Node Color](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#add-node-color)
+1. [Set Routing Fees](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#set-routing-fees)
 1. [Update lnd](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md#update-lnd)
 
 ## Start and Stop lnd
@@ -207,6 +208,21 @@ You can add a hex color to your node and payment channels that show up on a ln e
 color=#rrggbb
 ```
 It will take some time for it to update on the explorer.
+
+## Set Routing Fees
+**For a specific channel:**
+```
+lncli updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=144 --chan_point=ba3b479a824029621b12eb08975dc7e6776ce535aaed1d0ca4810d686946c11c:1
+```
+**For all channels:**
+```
+lncli updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=144 
+```
+**Check routing fees earned:**
+```
+lncli feereport
+```
+
 ## Update lnd
 ```
 $ cd $GOPATH/src/github.com/lightningnetwork/lnd
