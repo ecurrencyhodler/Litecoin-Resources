@@ -9,4 +9,4 @@
 # Lightning Network Apps for Litecoin
 
 1. https://t.me/lightningwalletbot Telegram bot that you can query for network information about LTC's Lightning Network from LiteStrike's lnd node. 
-2. [RaspiBlitz LN Node](https://github.com/rootzoll/raspiblitz/blob/master/README.md) Fastest and cheapest way to get your own Lightning Node running on Raspberry Pi with LCD.
+2. [RaspiBlitz LN Node](https://github.com/rootzoll/raspiblitz/blob/master/README.md) Fastest and cheapest way to get your own Lightning Node running on Raspberry Pi.
