@@ -11,3 +11,4 @@
 1. https://t.me/lightningwalletbot Telegram bot that you can query for network information about LTC's Lightning Network from LiteStrike's lnd node. 
 2. [RaspiBlitz LN Node](https://github.com/rootzoll/raspiblitz/blob/master/README.md) Fastest and cheapest way to get your own Lightning Node running on Raspberry Pi.
 3. [SparkSwap](https://sparkswap.com/) Atomic Swap exchange startup with BTC and LTC support.
+4. [Lightning in a Box](https://lightninginabox.co/product/lightning-in-a-box/) Merchant focused plug and play Lightning Network node.  Comes with btcpay and BTC/LTC support.
