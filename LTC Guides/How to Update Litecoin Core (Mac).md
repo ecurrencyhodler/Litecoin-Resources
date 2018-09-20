@@ -3,7 +3,8 @@ If you've compiled Litecoin Core yourself and want to upgrade it, your goal is t
 
 By downloading the newest version and running `make install`, your computer will simply write over the existing binaries so you do not need to remove or delete anything.  The newly downloaded Litecoin Core will then reference the already existing block files, peer database, and .conf file.  Also make sure Litecoind or litecoin-qt is shut down before you start:
 ```
-$ git clone  https://github.com/litecoin-project/litecoin
+$ cd litecoin
+$ git pull https://github.com/litecoin-project/litecoin
 $ cd litecoin
 $ ./autogen.sh
 $ ./configure 
