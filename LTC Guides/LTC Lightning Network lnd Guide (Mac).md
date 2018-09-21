@@ -103,7 +103,7 @@ txindex=1
 server=1
 daemon=1
 zmqpubrawblock=tcp://127.0.0.1:28332
-zmqpubrawtx=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
 ```
 Save the file (cmd+s). Now reindex the blockchain with the following commands:
 ```
@@ -149,7 +149,8 @@ litecoin.node=litecoind
 litecoind.rpchost=localhost
 litecoind.rpcuser=Copy and paste from litecoin.conf
 litecoind.rpcpass=Copy and past from litecoin.conf
-litecoind.zmqpath=tcp://127.0.0.1:28332
+litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
+litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
 ```
 Save (cmd+s) and close the file.  All we have to do now is wait for litecoind to finish downloading Litecoin's blockchain.  It should take a few hours or so.  You can periodically check how much of the blockchain it's downloaded by running this command:
 ```
