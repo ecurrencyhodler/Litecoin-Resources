@@ -29,7 +29,7 @@ Enter password.
 
 In order to properly shut down lnd and litecoind, you must first shut down lnd:
 ```
-$ lnd stop
+$ lnd --chain=litecoin stop
 ```
 Then you can shut down litecoind:
 ```
@@ -47,7 +47,7 @@ Then add a password for your wallet.  Feel free to answer the prompts in whateve
 ## Create and Fund a Segwit Address
 In the same terminal, put the following command:
 ```
-$ lncli newaddress p2wkh 
+$ lncli --chain=litecoin newaddress p2wkh 
 ```
 
 It should spit out a Bech32 Segwit address for Litecoin which looks something like:
@@ -57,7 +57,7 @@ Take the "ltc1 address" lnd created for you and fund it with LTC.  Do not send a
 
 You can check the ballance by inputting the following command. It should take about 10 minutes or so depending on where you sent it from and with what fee:
 ```
-$ lncli walletbalance
+$ lncli --chain=litecoin walletbalance
 ```
 
 ## Connect and Open a Channel
@@ -65,53 +65,53 @@ $ lncli walletbalance
   
 First, go to this LN explorer: http://lnexplorer.hcwong.me/  Click on a node and find their URI that’s listed.  Now go to your terminal and type the follow command:
 ```
-$ lncli connect <URI>
+$ lncli --chain=litecoin connect <URI>
 ```
 
 Example: 
-> lncli connect 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566@172.111.255.68:9735
+> lncli --chain=litecoin connect 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566@172.111.255.68:9735
   + **2. Open a Channel**
   
 Connecting a node is how Lightning Network nodes communicate with each other about important information such as node routes.  Btw the above URI is my node!  Feel free to connect to it as a test.  Next, fund and open the channel once you’re connected:
 ```
-$ lncli openchannel <pubkey + x LTC>
+$ lncli --chain=litecoin openchannel <pubkey + x LTC>
 ```
 Opening a payment channel is how LN nodes pay one another.  Note that the pubkey is the same thing as the URI except the ip address.  Also, make sure the "x" is in litoshis (btc equivalent of satoshi’s).
 
 Example:
 ```
-$ lncli openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566 200000
+$ lncli --chain=litecoin openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566 200000
 ```
 *FYI, the minimum amount required to fund a channel is currently set to 200000 litoshis.*
 
 If this fails, either the node you connected to is dead or you sent too little.  If it goes through, you must now wait for this tx to process on the Litecoin blockchain.  You should see that it is a “pending channel” if you type this in the terminal:
 ```
-$ lncli pendingchannels
+$ lncli --chain=litecoin pendingchannels
 ```
 ## Send a Payment
 Currently, the only way to pay is if you have the invoice of the node you are paying.  Ask them to send you an invoice.  Then you must do the following 2 steps:
 ```
-$ lncli decodepayreq <invoice>
-$ lncli payinvoice <invoice>
+$ lncli --chain=litecoin decodepayreq <invoice>
+$ lncli --chain=litecoin payinvoice <invoice>
 ```
 
 Example:
 ```
-$ lncli decodpayreq lnltc30n1pdvnvhypp5zegwluf8ptul93lw5c9az04g7d4wtw9l07tsq55m93u9uyhtlxesdqqcqzjq3rycdgt0tqx9f9wgnre8mjt2vkhj8thzvvjs0tq57cvdlkwpclxnez0f3ev2sxnpcs8tjt6sjpea03w0z4qhv7sq9r4ywk8wuczd89qqe9rsmj
-$ lncli payinvoice lnltc30n1pdvnvhypp5zegwluf8ptul93lw5c9az04g7d4wtw9l07tsq55m93u9uyhtlxesdqqcqzjq3rycdgt0tqx9f9wgnre8mjt2vkhj8thzvvjs0tq57cvdlkwpclxnez0f3ev2sxnpcs8tjt6sjpea03w0z4qhv7sq9r4ywk8wuczd89qqe9rsmj
+$ lncli --chain=litecoin decodpayreq lnltc30n1pdvnvhypp5zegwluf8ptul93lw5c9az04g7d4wtw9l07tsq55m93u9uyhtlxesdqqcqzjq3rycdgt0tqx9f9wgnre8mjt2vkhj8thzvvjs0tq57cvdlkwpclxnez0f3ev2sxnpcs8tjt6sjpea03w0z4qhv7sq9r4ywk8wuczd89qqe9rsmj
+$ lncli --chain=litecoin payinvoice lnltc30n1pdvnvhypp5zegwluf8ptul93lw5c9az04g7d4wtw9l07tsq55m93u9uyhtlxesdqqcqzjq3rycdgt0tqx9f9wgnre8mjt2vkhj8thzvvjs0tq57cvdlkwpclxnez0f3ev2sxnpcs8tjt6sjpea03w0z4qhv7sq9r4ywk8wuczd89qqe9rsmj
 ```
 Notice how the invoice is the same in both command lines.
 ## Create an Invoice
 In order to get paid, you must create your own invoice:
 ```
-$ lncli addinvoice <x>
+$ lncli --chain=litecoin addinvoice <x>
 ```
 
 `<x>` is the number of litoshis you went the person to send you.  You can input a value as small as 1!  Copy and paste the information in the "payreq" section and send it the person who is paying you.   
 
 Example:
 ```
-$ lncli addinvoice 5
+$ lncli --chain=litecoin addinvoice 5
 ```
 
 ## Make Your Node Public
@@ -147,7 +147,7 @@ externalip=xxx.xxx.xxx.xxx
 
 First, find and select which channel you want to close:
 ```
-$ lncli listchannels
+$ lncli --chain=litecoin listchannels
 ```
 Then look for their "channelpoint".  Here's an example of what that looks like:
 ```
@@ -155,11 +155,11 @@ Then look for their "channelpoint".  Here's an example of what that looks like:
 ```
 Then close the channel following this syntax:
 ```
-$ lncli closechannel <chainpoint x>
+$ lncli --chain=litecoin closechannel <chainpoint x>
 ```
 Example:
 ```
-$ lincli closechannel 428d5acbef17418f9849fe736f53f2bd830563f386d3d601ab0b37a38d98b1f8 5
+$ lincli --chain=litecoin closechannel 428d5acbef17418f9849fe736f53f2bd830563f386d3d601ab0b37a38d98b1f8 5
 ```
 *Note that I replaced the ":" at the end of the channel point with a space.*
 ## Turn on Autopilot
@@ -195,7 +195,8 @@ litecoin.node=litecoind
 litecoind.rpchost=localhost
 litecoind.rpcuser=Copy and paste from litecoin.conf
 litecoind.rpcpass=Copy and past from litecoin.conf
-litecoind.zmqpath=tcp://127.0.0.1:28332
+litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
+litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
 
 [autopilot]
 autopilot.active= 1
@@ -212,15 +213,15 @@ It will take some time for it to update on the explorer.
 ## Set Routing Fees
 **For a specific channel:**
 ```
-lncli updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=144 --chan_point=ba3b479a824029621b12eb08975dc7e6776ce535aaed1d0ca4810d686946c11c:1
+lncli --chain=litecoin updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=144 --chan_point=ba3b479a824029621b12eb08975dc7e6776ce535aaed1d0ca4810d686946c11c:1
 ```
 **For all channels:**
 ```
-lncli updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=144 
+lncli --chain=litecoin updatechanpolicy --fee_rate=0.001 --base_fee_msat=1000 --time_lock_delta=144 
 ```
 **Check routing fees earned:**
 ```
-lncli feereport
+lncli --chain=litecoin feereport
 ```
 
 ## Update lnd and litecoind
