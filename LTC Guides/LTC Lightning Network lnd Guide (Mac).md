@@ -191,7 +191,7 @@ After creating the wallet, make sure lnd is finished syncing before moving on.  
 ### Create and Fund a Segwit Address
 In the same terminal, put the following command:
 ```
-$ lncli newaddress p2wkh 
+$ lncli --chain=litecoin newaddress p2wkh 
 ```
 It should spit out a Bech32 Segwit address for Litecoin which looks something like:
 >ltc1qfsk63ukj8cp0fu6j65mxsymwlvrtjpplknyj29y4hn6d3aseadgq74gtkh
@@ -202,7 +202,7 @@ If it does give you a "ltc1 address," then fund it with LTC.  Do not send a lot,
 
 You can check the balance by inputting the following command:
 ```
-$ lncli walletbalance
+$ lncli --chain=litecoin walletbalance
 ```
 It should take about 10 minutes or so, depending on where you sent it from and with what fee.
 
@@ -211,7 +211,7 @@ Alright, let’s create a channel!
 
 First, go to this LN explorer: http://lnexplorer.hcwong.me/  Click on a node and find their URI that’s listed.  Now go to your terminal and type the follow command:
 ```
-$ lncli connect <URI>
+$ lncli --chain=litecoin connect <URI>
 ```
 
 Example: 
@@ -225,13 +225,13 @@ The pubkey is the same thing as the URI minus the ip address.  Also, make sure t
 
 Example:
 ```
-$ lncli openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566 200000
+$ lncli --chain=litecoin openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566 200000
 ```
 *FYI, the minimum amount required to fund a channel is currently set at 200000 litoshis.*
 
 If this fails, either the node you connected to is dead or you sent too little.  If it goes through, you must now wait for this tx to process on the Litecoin blockchain.  You should see that it is a “pending channel” if you type this in the terminal:
 ```
-$ lncli pendingchannels
+$ lncli --chain=litecoin pendingchannels
 ```
 
 Once the channel is open, you’ll be able to see yourself on the Litecoin LN explorer after a few minutes!   http://lnexplorer.hcwong.me/ As a side note, in for people to connect and open channels to you, you'll need to [make your node public.](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#make-your-node-public)
