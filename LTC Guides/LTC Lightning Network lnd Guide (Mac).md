@@ -93,7 +93,7 @@ txindex=1
 server=1
 daemon=1
 zmqpubrawblock=tcp://127.0.0.1:28332
-zmqpubrawtx=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
 ```
 Your litecoin.conf file should look something like this.
 ```
