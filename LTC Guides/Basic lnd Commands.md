@@ -159,7 +159,7 @@ $ lncli --chain=litecoin closechannel <chainpoint x>
 ```
 Example:
 ```
-$ lincli --chain=litecoin closechannel 428d5acbef17418f9849fe736f53f2bd830563f386d3d601ab0b37a38d98b1f8 5
+$ lncli --chain=litecoin closechannel 428d5acbef17418f9849fe736f53f2bd830563f386d3d601ab0b37a38d98b1f8 5
 ```
 *Note that I replaced the ":" at the end of the channel point with a space.*
 ## Turn on Autopilot
