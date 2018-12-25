@@ -12,3 +12,4 @@
 2. [RaspiBlitz LN Node](https://github.com/rootzoll/raspiblitz/blob/master/README.md) Fastest and cheapest way to get your own Lightning Node running on Raspberry Pi.
 3. [SparkSwap](https://sparkswap.com/) Atomic Swap exchange startup with BTC and LTC support.
 4. [Lightning in a Box](https://lightninginabox.co/product/lightning-in-a-box/) Merchant focused plug and play Lightning Network node.  Comes with btcpay and BTC/LTC support.
+5. [Zap!](https://zap.jackmallers.com/) Litecoin Lightning Network wallet for desktop and iOS.
