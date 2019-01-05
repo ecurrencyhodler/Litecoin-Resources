@@ -235,7 +235,7 @@ However if there are no breaking changes, you can simply follow these commands.
 ```
 $ cd $GOPATH/src/github.com/lightningnetwork/lnd
 $ git pull
-$ make && make install
+$ make clean && make && make install
 ```
 **For litecoind**
 
