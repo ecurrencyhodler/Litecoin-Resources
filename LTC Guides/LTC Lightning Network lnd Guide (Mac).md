@@ -216,11 +216,11 @@ $ lncli --chain=litecoin connect <URI>
 ```
 
 Example: 
-> lncli connect 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566@172.111.255.68:9735
+> lncli --chain=litecoin connect 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566@172.111.255.68:9735
 
 Btw the above URI is my node!  Feel free to connect to it as a test.  If you can't, it's because my node is temporarily off-line so either try again later or find another node to connect to.  Next, fund and open the channel once you’re connected:
 ```
-$ lncli openchannel <pubkey + x litoshis>
+$ lncli --chain=litecoin openchannel <pubkey + x litoshis>
 ```
 The pubkey is the same thing as the URI minus the ip address.  Also, make sure the "x" is in litoshis (1 Litecoin = 100,000,000 litoshis).  This is the equivalent of btc's satoshis.
 
