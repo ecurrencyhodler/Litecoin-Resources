@@ -227,7 +227,7 @@ lncli --chain=litecoin feereport
 ## Update lnd and litecoind
 Please refer to the latest notes on their releases here:
 ```
-https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md
+https://github.com/lightningnetwork/lnd/releases
 ```
 However if there are no breaking changes, you can simply follow these commands.
 
