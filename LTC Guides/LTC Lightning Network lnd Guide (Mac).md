@@ -25,7 +25,8 @@ Below is a legend.  Refer to it as you come across terms or symbols you don’t 
 
 + About 4 hours from start to finish without any errors.
 
-# Install Brew
+# Dependencies
+### Install Brew
 Go to “Spotlight” on the top right of your Mac screen (the magnifying glass) and type in `terminal`.  In terminal, input the following command as one line.  Remember! $ = 1 line of code.  Do not type $ into your terminal.
 
 ```
@@ -36,7 +37,7 @@ Enter the account password for the computer you're using to give it permission t
 ecurrencyhodlers-MacBook:~ ecurrencyhodler$
 ```
 
-# Install Golang
+### Install Golang
 Before we can install lnd (the client from Lightning Labs), we have to setup our computer first.  This will require us to install “golang.” Go back to the terminal and input the following:
 
 ```
@@ -73,7 +74,7 @@ $ make install
 ```
 FYI, `make` may take a while.  Also if you get a warning that the daemon is deprecated, you can ignore it and keep going.
 
-# Create and Fill Out litecoin.conf
+### Create and Fill Out litecoin.conf
 Once `make install` is finished, let's create a litecoin.conf file.
 
 ```
@@ -123,7 +124,7 @@ $ make check
 ```
 If you see an "Error 1", ignore it.  
 
-# Create and Fill Out lnd.conf
+### Create and Fill Out lnd.conf
 Let’s now create and edit a configuration file for lnd just like we did with litecoind.  In the same terminal, type:
 ```
 $ cd
