@@ -13,3 +13,4 @@ This is a list of Litecoin resources for people to reference.
 1. https://github.com/litecoin-foundation
 1. https://liteaddress.org/ Paper Wallet Generator.  Follow [this guide](https://theliteschool.com/lsc/how-to-create-and-spend-a-paper-wallet) to make one yourself.
 1. https://recovery.loafwallet.org/ Website to recover your LTC from loafwallet with your seedkeys.  Follow [these steps](https://www.reddit.com/r/litecoin/comments/7epj6u/a_guide_to_recovering_your_ltc_from_loafwallet/) to learn how.
+1. https://www.litecoinblockhalf.com/ Website to show when the next Litecoin halving will occur.
