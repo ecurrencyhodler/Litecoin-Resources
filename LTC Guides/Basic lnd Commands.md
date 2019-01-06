@@ -176,7 +176,7 @@ Then add the following:
 [autopilot]
 autopilot.active= [1 to turn on.  0 to turn off]
 autopilot.maxchannels= [max number of channels that should be created]
-autupilot.allocation= [% total funds that should be committed to automatic channel establishment. 1= 100%.  0.5= 50%]
+autopilot.allocation= [% total funds that should be committed to automatic channel establishment. 1= 100%.  0.5= 50%]
 ```
 Example:
 ```
