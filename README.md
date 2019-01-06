@@ -1,5 +1,5 @@
 # Litecoin-Resources
-This is a list of Litecoin resources for people to reference.
+This is a list of verified Litecoin resources.
 
 ### Verified Litecoin Websites
 1. www.litecoin.org
