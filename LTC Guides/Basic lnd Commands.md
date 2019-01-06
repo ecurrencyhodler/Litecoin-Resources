@@ -201,7 +201,7 @@ litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
 [autopilot]
 autopilot.active= 1
 autopilot.maxchannels= 5
-autupilot.allocation= 0.7
+autopilot.allocation= 0.7
 ```
 ## Add Node Color
 You can add a hex color to your node and payment channels that show up on a ln explorer.  Anywhere underneath [Applications] in lnd.conf, simply add the following line:  
