@@ -16,4 +16,4 @@
 
 # Lightning Network Merchant Processors
 
-1. [Coingate](https://coingate.com/) The first every merchant processor to offer Litecoin Lightning Network services. 
+1. [Coingate](https://coingate.com/) The very first merchant processor to offer Litecoin Lightning Network services. 
