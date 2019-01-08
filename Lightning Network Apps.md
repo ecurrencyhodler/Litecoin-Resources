@@ -13,3 +13,7 @@
 3. [SparkSwap](https://sparkswap.com/) Atomic Swap exchange startup with BTC and LTC support.
 4. [Lightning in a Box](https://lightninginabox.co/product/lightning-in-a-box/) Merchant focused plug and play Lightning Network node.  Comes with btcpay and BTC/LTC support.
 5. [Zap!](https://zap.jackmallers.com/) Litecoin Lightning Network wallet for desktop and iOS.
+
+# Lightning Network Merchant Processors
+
+1. [Coingate](https://coingate.com/) The first every merchant processor to offer Litecoin Lightning Network services. 
