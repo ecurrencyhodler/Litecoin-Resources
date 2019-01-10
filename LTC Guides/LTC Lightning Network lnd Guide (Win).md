@@ -6,9 +6,12 @@ This is a step-by-step main net tutorial on how to setup a Lightning Network nod
 
 Go to https://litecoin.org/#download and download the Windows Litecoin installer for [32 bit](https://download.litecoin.org/litecoin-0.16.3/win/litecoin-0.16.3-win32-setup.exe) or [64 bit](https://download.litecoin.org/litecoin-0.16.3/win/litecoin-0.16.3-win64-setup.exe), depending on your system.
 
-Run the installer and install to the default location.
+Run the installer by double clicking it and install to the default location.
 
-Create a text file named "litecoin.conf" in %AppData%\Litecoin with the following content (be sure to replace the rpcuser and rpcpassword with your own values):
+Create a text file named "litecoin.conf" in %AppData%\Litecoin by doing the following:
+1. Go to folders.
+2. Go to this directory `C:\Users\YourUserName\Appdata\Roaming\Litecoin`.  You may have to manually type it in.
+3. Right click in the Litecoin folder and create .txt file, name it litecoin.conf, and fill it with the following content (be sure to replace the rpcuser and rpcpassword with your own values):
 
 ```
 rpcuser=<username>
