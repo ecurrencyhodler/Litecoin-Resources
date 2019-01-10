@@ -30,7 +30,7 @@ Finally, start Litecoin Core and begin to download the blockchain, which can tak
 
 Go to https://github.com/lightningnetwork/lnd/releases and download LND for Windows ([32 bit](https://github.com/lightningnetwork/lnd/releases/download/v0.5.1-beta/lnd-windows-386-v0.5.1-beta.zip) or [64 bit](https://github.com/lightningnetwork/lnd/releases/download/v0.5.1-beta/lnd-windows-amd64-v0.5.1-beta.zip)).
 
-Browse to `C:\Users\YourUserName\appdata\local` and create a directory named "Lnd" and within it create a directory named "bin" (C:\Users\YourUserName\appdata\local\Lnd\bin)
+Browse to `C:\Users\YourUserName\appdata\local` and create a directory named "Lnd" and within it create a directory named "bin" (`C:\Users\YourUserName\appdata\local\Lnd\bin`)
 
 Copy the two files lncli.exe and lnd.exe from the zip file to it.
 
