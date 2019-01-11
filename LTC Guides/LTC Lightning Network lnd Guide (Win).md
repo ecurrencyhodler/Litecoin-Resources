@@ -10,7 +10,7 @@ Run the installer by double clicking and install to the default location.
 
 Then create a text file named "litecoin.conf" in %AppData%\Litecoin by doing the following:
 1. Go to folders.
-2. Go to this directory `C:\Users\YourUserName\Appdata\Roaming\Litecoin`.  You may have to manually type it in.
+2. Go to this directory `C:\Users\YourUserName\Appdata\Roaming\Litecoin`.  You may have to manually type it %AppData% in your search bar to find it.
 3. Right click in the Litecoin folder and create .txt file, name it litecoin.conf, and fill it with the following content (be sure to replace the rpcuser and rpcpassword with your own values):
 
 ```
@@ -32,7 +32,7 @@ Go to https://github.com/lightningnetwork/lnd/releases and download LND for Wind
 
 Browse to `C:\Users\YourUserName\appdata\local` and create a directory named "Lnd" and within it create a directory named "bin" (`C:\Users\YourUserName\appdata\local\Lnd\bin`)
 
-Copy the two files lncli.exe and lnd.exe from the zip file to it.
+Copy the two files lncli.exe and lnd.exe from the zip file to it.  You can do this by right clicking on the file, copying, and then pasting them from one folder to the other.
 
 Create a text file named "lnd.conf" in `C:\Users\YourUserName\appdata\local\Lnd` with the following content (be sure to replace alias, rpcuser, and rpcpass with your own values):
 
@@ -63,7 +63,7 @@ Repeat the above steps for ports 9735, 10009, and 10010.
 
 ### Step 4. Start LND
 
-Open a command prompt and enter:
+Once Litecoin Core has finished syncing, open a command prompt and enter:
 
     %LocalAppData%\Lnd\bin\lnd.exe
 
