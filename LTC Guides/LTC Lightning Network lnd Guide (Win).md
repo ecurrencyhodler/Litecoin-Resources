@@ -21,10 +21,10 @@ server=1
 daemon=1
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
-Open Litecoin Core from the Start Menu.
 ```
+Open Litecoin Core from the Start Menu.
 
-Finally, start Litecoin Core and begin to download the blockchain, which can take a few hours to a few days. You can continue with the next few steps while the node syncs.
+Litecoin Core will then begin to download the blockchain, which can take a few hours to a few days. You can continue with the next few steps while the node syncs.
 
 ### Step 2. Install LND
 
