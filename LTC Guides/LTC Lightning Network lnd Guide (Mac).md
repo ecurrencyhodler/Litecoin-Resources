@@ -226,9 +226,8 @@ The pubkey is the same thing as the URI minus the ip address.  Also, make sure t
 
 Example:
 ```
-$ lncli --chain=litecoin openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566 200000
+$ lncli --chain=litecoin openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566 300000
 ```
-*FYI, the minimum amount required to fund a channel is currently set at 200000 litoshis.*
 
 If this fails, either the node you connected to is dead or you sent too little.  If it goes through, you must now wait for this tx to process on the Litecoin blockchain.  You should see that it is a “pending channel” if you type this in the terminal:
 ```
