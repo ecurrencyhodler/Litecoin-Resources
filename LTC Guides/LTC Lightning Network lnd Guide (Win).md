@@ -11,7 +11,8 @@ Run the installer by double clicking and install to the default location.
 Then create a text file named "litecoin.conf" in %AppData%\Litecoin by doing the following:
 1. Go to folders.
 2. Go to this directory `C:\Users\YourUserName\Appdata\Roaming\Litecoin`.  You may have to manually type it %AppData% in your search bar to find it.
-3. Right click in the Litecoin folder and create .txt file, name it litecoin.conf, and fill it with the following content (be sure to replace the rpcuser and rpcpassword with your own values):
+3. Right click in the Litecoin folder and create .txt file, name it litecoin.conf. Be sure the file you created is called "litecoin.conf" and not "litecoin.conf.txt". In Windows Explorer, you can enable the option to show file extensions to be sure you've created the correct file here.
+4. Fill litecoin.conf with the following content (be sure to replace the rpcuser and rpcpassword with your own values):
 
 ```
 rpcuser=<username>
