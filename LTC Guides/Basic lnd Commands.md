@@ -113,6 +113,10 @@ Example:
 ```
 $ lncli --chain=litecoin addinvoice 5
 ```
+You can then copy and paste the hash in the pay_req field, which should look something like this:
+```
+lnltc10n1pwrujg6pp57a7hrr4pgjm3y75m7fdkzm88qmdjc7hp277jsppvk0speerffv3sdqqcqzjqx64aqznxn0e0747jhmha9a0g0ds9l9sjmwdak3v879gm44jq9caxyc8eled8wtnrtclcpz2ydffs4jxa6fh4jc5snh9yzmgw2jnvvfgpk3te5k
+```
 
 ## Make Your Node Public
 In order to make your node public so that people can connect and open channels with your node, you need to do 2 things:
