@@ -65,7 +65,7 @@ $ brew install zeromq
 $ git clone git://github.com/zeromq/libzmq.git
 $ cd libzmq
 $ ./autogen.sh
-$ ./configure     # add other options here
+$ ./configure    
 $ make
 $ make check
 $ sudo make install
