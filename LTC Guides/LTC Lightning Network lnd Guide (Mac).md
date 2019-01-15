@@ -185,7 +185,7 @@ We will now complete 3 tasks:
 2. [Create and Fund a Bech 32 Segwit Address.](https://gist.github.com/ecurrencyhodler/f6da7f26110c875e7fa41a91c66b72a1#create-and-fund-a-segwit-address)
 3. [Connect and Open a Channel](https://gist.github.com/ecurrencyhodler/f6da7f26110c875e7fa41a91c66b72a1#connect-and-open-a-channel)
 
-For a more complete list, refer to [Basic lnd Commands](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5)
+For a more complete list, refer to [Basic lnd Commands](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md)
 
 ### Create a Wallet
 Let's create a wallet for lnd:
