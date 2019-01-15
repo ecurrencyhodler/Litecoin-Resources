@@ -127,7 +127,7 @@ In order to make your node public so that people can connect and open channels w
 
 Some internet providers provide static ip addresses.  Some do not.  It's possible to obtain one through a vpn service.
 
-  + **1b. Update litecoin.conf**
+  + **1b. Update lnd.conf**
 ```
 $ open /Users/${USER}/Library/Application\ Support/Lnd 
 ```
