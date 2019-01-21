@@ -241,7 +241,7 @@ If this fails, either the node you connected to is dead or you sent too little. 
 $ lncli --chain=litecoin pendingchannels
 ```
 
-Once the channel is open, you’ll be able to see yourself on the Litecoin LN explorer after a few minutes!   https://ltc.roska.life/ As a side note, in for people to connect and open channels to you, you'll need to [make your node public.](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#make-your-node-public)
+Once the channel is open, you’ll be able to see yourself on the Litecoin LN explorer after a few minutes!   As a side note, in for people to connect and open channels to you, you'll need to [make your node public.](https://gist.github.com/ecurrencyhodler/03320bbc45e70d061acecb3241ea53e5#make-your-node-public)
 
 Alright, to learn how to make payments on the Lightning network, visit "[Basic lnd Commands](https://github.com/ecurrencyhodler/Litecoin-Resources/blob/master/LTC%20Guides/Basic%20lnd%20Commands.md)."
 
