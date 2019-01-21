@@ -23,6 +23,16 @@ daemon=1
 zmqpubrawblock=tcp://127.0.0.1:28332
 zmqpubrawtx=tcp://127.0.0.1:28333
 ```
+Here's an example of what it should look like:
+```
+rpcuser=LitecoinUser
+rpcpassword=ABCdefGHi
+txindex=1
+server=1
+daemon=1
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
+```
 Open Litecoin Core from the Start Menu.
 
 Litecoin Core will then begin to download the blockchain, which can take a few hours to a few days. You can continue with the next few steps while the node syncs.
@@ -53,7 +63,23 @@ litecoind.rpcpass=<password_from_litecoin.conf>
 litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
 litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
 ```
-
+Here's an example of what it should look like:
+```
+debuglevel=info
+alias=Majestic84
+maxpendingchannels=10
+datadir=$LOCALAPPDATA/Lnd/data
+rpclisten=127.0.0.1:10009
+restlisten=127.0.0.1:10010
+litecoin.mainnet=1
+litecoin.active=1
+litecoin.node=litecoind
+litecoind.rpchost=127.0.0.1
+litecoind.rpcuser=LitecoinUser
+litecoind.rpcpass=ABCdefGHi
+litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
+litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
+```
 ### Step 3. Open ports
 
 Open Windows Firewall then click "Advanced settings" and select "Inbound rules".
