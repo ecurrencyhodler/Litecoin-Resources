@@ -62,7 +62,7 @@ Below are the steps to download Litecoin Core straight from the github. Fair war
 ```
 $ brew install automake berkeley-db4 libtool boost --c++11 miniupnpc openssl pkg-config protobuf qt libevent
 $ brew install zeromq
-$ git clone git://github.com/zeromq/libzmq.git
+$ git clone https://github.com/zeromq/libzmq
 $ cd libzmq
 $ ./autogen.sh
 $ ./configure    
