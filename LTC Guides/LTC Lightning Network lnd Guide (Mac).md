@@ -19,7 +19,7 @@ Below is a legend.  Refer to it as you come across terms or symbols you don’t 
   + Install Brew (Instructions below)
   + Install Go (Instructions below)
 
-+ At least 20 GB of space on your computer.  
++ At least 30 GB of space on your computer.  
 
 + Home directory in the default location. If you don't know what this means then don't worry, everything should be installed there already.
 
