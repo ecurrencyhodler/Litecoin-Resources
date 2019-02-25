@@ -1,0 +1,151 @@
+#!/bin/bash
+# Run this script as as the Ubuntu (or equivalent) user on Ubuntu 18.04
+
+MEM=$(free -m | awk '/^Mem:/{print $2}')
+SWAP=$(free -m | awk '/^Swap:/{print $2}')
+DISK_FREE=$(df -k --output='avail' /|sed 1d)
+RPC_PW=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
+RELEASE=$(lsb_release -a 2>&1| awk '/Release:/{print $2}')
+
+if [ "$RELEASE" != "18.04" ]
+then
+  read -p "This isn't Ubuntu 18.04. Are you sure you want to continue? " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then exit
+  fi
+fi
+
+if [ "$USER" == "root" ]
+then
+  read -p "This hasn't been tested to run as root. Are you sure you want to continue? " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then exit
+  fi
+fi
+
+if (($MEM + $SWAP < 5120 ))
+then
+  read -p "Memory plus swap is less than 5GB. Are you sure you want to continue? " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then exit
+  fi
+fi
+
+if (($DISK_FREE < 30 * 1024 * 1024))
+then
+  read -p "Free disk space is less than 30GB. Are you sure you want to continue? " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then exit
+  fi
+fi
+
+read -p "Enter your node alias [UNNAMED_NODE]: " ALIAS
+ALIAS=${ALIAS:-UNNAMED_NODE}
+
+cd
+
+echo "Installing prerequisites"
+sudo apt install -y tor tmux jq git curl
+sudo bash -c "cat >> /etc/tor/torrc" <<'EOF'
+ExitPolicy reject *:* # no exits allowed
+Log notice stdout
+ControlPort 9051
+CookieAuthentication 1
+CookieAuthFileGroupReadable 1
+EOF
+
+sudo usermod -a -G debian-tor $USER
+sudo systemctl restart tor
+
+echo "Downloading and installing litecoind"
+curl https://download.litecoin.org/litecoin-0.16.3/linux/litecoin-0.16.3-x86_64-linux-gnu.tar.gz | tar xvfpz -
+mkdir ~/.litecoin
+cat << EOF > ~/.litecoin/litecoin.conf 
+rpcuser=litecoinrpc
+rpcpassword=$RPC_PW
+txindex=1
+server=1
+daemon=1
+rpcbind=127.0.0.1
+bind=127.0.0.1
+discardfee=0.00000001
+mintxfee=0.00000001
+minrelaytxfee=0.00000001
+zmqpubrawblock=tcp://127.0.0.1:28332
+zmqpubrawtx=tcp://127.0.0.1:28333
+#debug=1
+dbcache=450
+EOF
+
+# install golang (need 1.11)
+echo "Installing golang"
+sudo add-apt-repository -y ppa:longsleep/golang-backports
+sudo apt update -y
+sudo apt install -y golang-go
+echo 'export GOPATH=~/gocode' >> ~/.bash_profile
+echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bash_profile
+echo alias lncli=\'~/gocode/bin/lncli --network mainnet --chain litecoin\' >> ~/.bash_profile
+. .bash_profile
+# install lnd
+echo "Downloading lnd source code"
+go get -d github.com/lightningnetwork/lnd
+cd $GOPATH/src/github.com/lightningnetwork/lnd
+echo "Building lnd"
+make && make install
+#make check
+mkdir ~/.lnd
+
+cat << EOF > ~/.lnd/lnd.conf 
+[Application Options]
+
+listen=127.0.0.1:9735
+alias=$ALIAS
+debuglevel=debug
+maxlogfiles=30
+maxlogfilesize=100
+maxpendingchannels=10
+
+[autopilot]
+autopilot.active=1
+autopilot.maxchannels=500
+autopilot.allocation=1.0
+ 
+[Litecoin]
+litecoin.mainnet=true
+litecoin.active=1
+litecoin.node=litecoind
+
+[Litecoind]
+litecoind.rpchost=localhost
+litecoind.rpcuser=litecoinrpc
+litecoind.rpcpass=$RPC_PW
+litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
+litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
+
+[tor]
+tor.active=1
+tor.socks=9050
+tor.dns=nodes.lightning.directory
+tor.streamisolation=1
+tor.control=9051
+tor.v2=1
+tor.privatekeypath=/home/$USER/.lnd/tor-key
+EOF
+
+# Start litecoind
+echo "Starting litecoind"
+~/litecoin-0.16.3/bin/litecoind
+
+# start lnd
+echo "Starting lnd"
+tmux new -d -s shared 'lnd'
+
+# create wallet (Seperate terminal window)
+lnd create
+
+echo "Run the following command to check status (It will be ready when true)"
+echo "lncli getinfo | jq -r ' . | {synced_to_chain}'"
