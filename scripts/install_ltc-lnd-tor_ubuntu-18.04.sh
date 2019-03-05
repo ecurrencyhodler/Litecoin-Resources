@@ -48,6 +48,7 @@ ALIAS=${ALIAS:-UNNAMED_NODE}
 
 cd
 
+# install and configure tor
 echo "Installing prerequisites"
 sudo apt install -y tor tmux jq git curl
 sudo bash -c "cat >> /etc/tor/torrc" <<'EOF'
@@ -61,26 +62,6 @@ EOF
 sudo usermod -a -G debian-tor $USER
 sudo systemctl restart tor
 
-echo "Downloading and installing litecoind"
-curl https://download.litecoin.org/litecoin-0.16.3/linux/litecoin-0.16.3-x86_64-linux-gnu.tar.gz | tar xvfpz -
-mkdir ~/.litecoin
-cat << EOF > ~/.litecoin/litecoin.conf 
-rpcuser=litecoinrpc
-rpcpassword=$RPC_PW
-txindex=1
-server=1
-daemon=1
-rpcbind=127.0.0.1
-bind=127.0.0.1
-discardfee=0.00000001
-mintxfee=0.00000001
-minrelaytxfee=0.00000001
-zmqpubrawblock=tcp://127.0.0.1:28332
-zmqpubrawtx=tcp://127.0.0.1:28333
-#debug=1
-dbcache=450
-EOF
-
 # install golang (need 1.11)
 echo "Installing golang"
 sudo add-apt-repository -y ppa:longsleep/golang-backports
@@ -90,6 +71,23 @@ echo 'export GOPATH=~/gocode' >> ~/.bash_profile
 echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bash_profile
 echo alias lncli=\'~/gocode/bin/lncli --network mainnet --chain litecoin\' >> ~/.bash_profile
 . .bash_profile
+
+# install ltcd
+echo "Downloading and installing ltcd"
+go get github.com/ltcsuite/ltcd
+mkdir ~/.ltcd
+cat << EOF > ~/.ltcd/ltcd.conf 
+[Application Options]
+proxy=127.0.0.1:9050
+onion=127.0.0.1:9050
+torisolation=1
+maxpeers=125
+listen=127.0.0.1:8333
+rpcuser=litecoinrpc
+rpcpass=$RPC_PW
+minrelaytxfee=0.00000001
+EOF
+
 # install lnd
 echo "Downloading lnd source code"
 go get -d github.com/lightningnetwork/lnd
@@ -110,7 +108,7 @@ maxlogfilesize=100
 maxpendingchannels=10
 
 [autopilot]
-autopilot.active=1
+autopilot.active=0
 autopilot.maxchannels=500
 autopilot.allocation=1.0
  
@@ -136,16 +134,18 @@ tor.v2=1
 tor.privatekeypath=/home/$USER/.lnd/tor-key
 EOF
 
-# Start litecoind
-echo "Starting litecoind"
-~/litecoin-0.16.3/bin/litecoind
+# start ltcd
+echo "Starting ltcd"
+tmux new -d -s ltcd 'ltcd'
 
 # start lnd
 echo "Starting lnd"
-tmux new -d -s shared 'lnd'
+tmux new -d -s lnd 'lnd'
 
 # create wallet (Seperate terminal window)
 lnd create
 
 echo "Run the following command to check status (It will be ready when true)"
 echo "lncli getinfo | jq -r ' . | {synced_to_chain}'"
+echo "Currently DNS based network bootstrapping hasn't been enabled. To connect to the network after you are synced, you can run the following command to connect to a know public node, which will sync routing info about the rest of the network.:"
+echo "lncli connect 02e2fc5f8c8a1003131f9a182f7bec328bd8b877c13a9c318851e49a737137195c@54.157.91.178:9735"
