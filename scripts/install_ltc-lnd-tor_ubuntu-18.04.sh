@@ -74,7 +74,9 @@ echo alias lncli=\'~/gocode/bin/lncli --network mainnet --chain litecoin\' >> ~/
 
 # install ltcd
 echo "Downloading and installing ltcd"
-go get github.com/ltcsuite/ltcd
+go get -u github.com/ltcsuite/ltcd
+cd $GOPATH/src/github.com/ltcsuite/ltcd
+GO111MODULE=on go install -v . ./cmd/...
 mkdir ~/.ltcd
 cat << EOF > ~/.ltcd/ltcd.conf 
 [Application Options]
