@@ -7,6 +7,25 @@ DISK_FREE=$(df -k --output='avail' /|sed 1d)
 RPC_PW=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 32 | head -n 1)
 RELEASE=$(lsb_release -a 2>&1| awk '/Release:/{print $2}')
 
+if [ "$1" == "delete_my_money" ]
+then
+  read -p "Are you sure you want to delete everything and start over? (You could accidentally delete your wallet.) " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]
+    then exit
+  fi
+  echo "Say goodbye to your money!"
+  sudo sed -ni '/^ExitPolicy reject/q;p' /etc/tor/torrc
+  sed -ni '/^export GOPATH/q;p' ~/.bash_profile
+  ~/gocode/bin/lncli --network mainnet --chain litecoin stop
+  ~/gocode/bin/ltccmd stop
+  tmux kill-session -t lnd
+  tmux kill-session -t ltcd
+  sudo apt -y purge tor
+  sudo apt -y autoremove
+  sudo rm -rf ~/.ltcd ~/.lnd ~/gocode
+fi
+
 if [ "$RELEASE" != "18.04" ]
 then
   read -p "This isn't Ubuntu 18.04. Are you sure you want to continue? " -n 1 -r
