@@ -22,6 +22,7 @@ then
   tmux kill-session -t lnd
   tmux kill-session -t ltcd
   sudo apt -y purge tor
+  sudo apt -y purge golang-*
   sudo apt -y autoremove
   sudo rm -rf ~/.ltcd ~/.lnd ~/gocode
 fi
@@ -85,7 +86,7 @@ sudo systemctl restart tor
 echo "Installing golang"
 sudo add-apt-repository -y ppa:longsleep/golang-backports
 sudo apt update -y
-sudo apt install -y golang-go
+sudo apt install -y golang-1.11
 echo 'export GOPATH=~/gocode' >> ~/.bash_profile
 echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bash_profile
 echo alias lncli=\'~/gocode/bin/lncli --network mainnet --chain litecoin\' >> ~/.bash_profile
