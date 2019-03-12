@@ -22,6 +22,7 @@ then
   tmux kill-session -t lnd
   tmux kill-session -t ltcd
   sudo apt -y purge tor
+  sudo apt -y purge golang-*
   sudo apt -y autoremove
   sudo rm -rf ~/.ltcd ~/.lnd ~/gocode
 fi
