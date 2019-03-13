@@ -90,7 +90,6 @@ sudo apt install -y golang-1.11
 echo 'export GOPATH=~/gocode' >> ~/.bash_profile
 echo 'export PATH=$PATH:$GOPATH/bin:/usr/lib/go-1.11/bin' >> ~/.bash_profile
 echo alias lncli=\'~/gocode/bin/lncli --network mainnet --chain litecoin\' >> ~/.bash_profile
-echo alias go=\'/usr/lib/go-1.11/bin/go\' >> ~/.bash_profile
 . .bash_profile
 
 # install ltcd
