@@ -88,7 +88,7 @@ sudo add-apt-repository -y ppa:longsleep/golang-backports
 sudo apt update -y
 sudo apt install -y golang-1.11
 echo 'export GOPATH=~/gocode' >> ~/.bash_profile
-echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bash_profile
+echo 'export PATH=$PATH:$GOPATH/bin:/usr/lib/go-1.11/bin' >> ~/.bash_profile
 echo alias lncli=\'~/gocode/bin/lncli --network mainnet --chain litecoin\' >> ~/.bash_profile
 . .bash_profile
 
@@ -137,14 +137,12 @@ autopilot.allocation=1.0
 [Litecoin]
 litecoin.mainnet=true
 litecoin.active=1
-litecoin.node=litecoind
+litecoin.node=ltcd
 
-[Litecoind]
-litecoind.rpchost=localhost
-litecoind.rpcuser=litecoinrpc
-litecoind.rpcpass=$RPC_PW
-litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
-litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
+[ltcd]
+ltcd.rpchost=localhost
+ltcd.rpcuser=litecoinrpc
+ltcd.rpcpass=$RPC_PW
 
 [tor]
 tor.active=1
