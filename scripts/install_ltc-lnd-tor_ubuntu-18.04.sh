@@ -163,7 +163,7 @@ echo "Starting lnd"
 tmux new -d -s lnd 'lnd'
 
 # create wallet (Seperate terminal window)
-lnd create
+lncli create
 
 echo "Run the following command to check status (It will be ready when true)"
 echo "lncli getinfo | jq -r ' . | {synced_to_chain}'"
