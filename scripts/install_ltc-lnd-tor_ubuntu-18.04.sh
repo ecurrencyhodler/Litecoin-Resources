@@ -162,7 +162,9 @@ tmux new -d -s ltcd 'ltcd'
 echo "Starting lnd"
 tmux new -d -s lnd 'lnd'
 
-# create wallet (Seperate terminal window)
+# create wallet
+echo "Creating lnd wallet"
+sleep 5
 lncli create
 
 echo "Run the following command to check status (It will be ready when true)"
