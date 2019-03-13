@@ -137,14 +137,12 @@ autopilot.allocation=1.0
 [Litecoin]
 litecoin.mainnet=true
 litecoin.active=1
-litecoin.node=litecoind
+litecoin.node=ltcd
 
-[Litecoind]
-litecoind.rpchost=localhost
-litecoind.rpcuser=litecoinrpc
-litecoind.rpcpass=$RPC_PW
-litecoind.zmqpubrawblock=tcp://127.0.0.1:28332
-litecoind.zmqpubrawtx=tcp://127.0.0.1:28333
+[ltcd]
+ltcd.rpchost=localhost
+ltcd.rpcuser=litecoinrpc
+ltcd.rpcpass=$RPC_PW
 
 [tor]
 tor.active=1
