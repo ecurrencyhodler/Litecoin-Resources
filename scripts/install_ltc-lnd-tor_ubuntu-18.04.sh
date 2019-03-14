@@ -18,7 +18,7 @@ then
   sudo sed -ni '/^ExitPolicy reject/q;p' /etc/tor/torrc
   sed -ni '/^export GOPATH/q;p' ~/.bash_profile
   ~/gocode/bin/lncli --network mainnet --chain litecoin stop
-  ~/gocode/bin/ltccmd stop
+  ~/gocode/bin/ltcctl stop
   tmux kill-session -t lnd
   tmux kill-session -t ltcd
   sudo apt -y purge tor
@@ -108,6 +108,12 @@ listen=127.0.0.1:8333
 rpcuser=litecoinrpc
 rpcpass=$RPC_PW
 minrelaytxfee=0.00000001
+EOF
+
+mkdir ~/.ltcctl
+cat << EOF > ~/.ltcctl/ltcctl.conf 
+rpcuser=litecoinrpc
+rpcpass=$RPC_PW
 EOF
 
 # install lnd
