@@ -9,6 +9,7 @@
 1. [SparkSwap](https://sparkswap.com/) Atomic Swap exchange startup with BTC and LTC support.
 1. [Million Litecoin Homepage](https://millionlitecoinhomepage.net/) Place to draw pictures by buying pixels.  You can override a pixel for the same price of the last purchase, so it will always cost 1 litoshi / pixel except if someone wants to pay more (from 10 litoshis to 1 ltc) to draw pixels.  This disincentivizes people not to draw over your pixels. 
 1. [Litoshisplace.com](https://litoshisplace.com/) Similar to satoshis.place where you can draw by buying pixels.  Unlike Million Litecoin Homepage, there is no upcharge to make it more expensive to replace a pixel.  
+1. [boltz.exchange](https://boltz.exchange/) Non-custodial Atomic Swap exchange.  
 
 # Lightning Stores
 1. [Bitrefill](https://en.bitrefill.com/usa/) Prepaid phone minutes, steam vouchers, and reddit gold.
