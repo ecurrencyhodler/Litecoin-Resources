@@ -27,11 +27,11 @@ Enter password.
 ```
 **Stop lnd and litecoind**
 
-In order to properly shut down lnd and litecoind, you must first shut down lnd:
+First shut down lnd:
 ```
 $ lnd --chain=litecoin stop
 ```
-Then you can shut down litecoind:
+Then shut down litecoind:
 ```
 $ litecoin-cli stop
 ```
@@ -42,18 +42,18 @@ Let's create a wallet for lnd:
 $ lncli create
 ```
 
-Then add a password for your wallet.  Feel free to answer the prompts in whatevery you like.  You can provide your own 24 word seedkey or lnd can generate one for you.  If it generates one for you, make sure to write down the seedkeys!. lnd will also ask you if you want to encrypt it.  You don’t have to if you don’t want to.  Once you're all done, we can create and fund a Litecoin Segwit Address. 
+Then add a password for your wallet.  You can provide your own 24 word seedkey or lnd can generate one for you.  If it generates one for you, make sure to write down the seedkeys! lnd will also ask you if you want to encrypt it.  Once you're all done, we can create and fund a Litecoin Segwit Address. 
 
 ## Create and Fund a Segwit Address
-In the same terminal, put the following command:
+In the same terminal, input the following command:
 ```
 $ lncli --chain=litecoin newaddress p2wkh 
 ```
 
-It should spit out a Bech32 Segwit address for Litecoin which looks something like:
+It should spit out a Bech32 Segwit address for Litecoin which looks something like this:
 >ltc1qfsk63ukj8cp0fu6j65mxsymwlvrtjpplknyj29y4hn6d3aseadgq74gtkh
 
-Take the "ltc1 address" lnd created for you and fund it with LTC.  Do not send a lot, perhaps 0.1 LTC max.  **Disclaimer: Send LTC at your own risk** Also, you’ll need to send it from a wallet that supports sending to bech32 addresses.  The 2 that I know of currently are Electrum-LTC and Coinbase/GDAX. 
+Take the "ltc1 address" lnd created for you and fund it with LTC.  Do not send a lot, perhaps 0.1 LTC max.  **Disclaimer: Send LTC at your own risk** Also, you’ll need to send it from a wallet that supports sending to bech32 addresses.  The 4 that I know of currently are Electrum-LTC, Coinbase, Gemini, and Loafwallet. 
 
 You can check the ballance by inputting the following command. It should take about 10 minutes or so depending on where you sent it from and with what fee:
 ```
@@ -63,7 +63,7 @@ $ lncli --chain=litecoin walletbalance
 ## Connect and Open a Channel
   + **1. Connect to a Node**
   
-First, go to this LN explorer: http://lnexplorer.hcwong.me/  Click on a node and find their URI that’s listed.  Now go to your terminal and type the follow command:
+First, go to this LN explorer: http://lnexplorer.hcwong.me/  Click on a node and find a URI that’s listed.  Now go to your terminal and type the follow command:
 ```
 $ lncli --chain=litecoin connect <URI>
 ```
@@ -72,11 +72,11 @@ Example:
 > lncli --chain=litecoin connect 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561cbaf2d98e67a9919b213566@172.111.255.68:9735
   + **2. Open a Channel**
   
-Connecting a node is how Lightning Network nodes communicate with each other about important information such as node routes.  Btw the above URI is my node!  Feel free to connect to it as a test.  Next, fund and open the channel once you’re connected:
+Connecting a node is how Lightning Network nodes communicate with each other about important information such as node routes.  Btw the above URI is my node!  Feel free to connect to it as a test.  Then, fund and open the channel once you’re connected:
 ```
 $ lncli --chain=litecoin openchannel <pubkey + x LTC>
 ```
-Opening a payment channel is how LN nodes pay one another.  Note that the pubkey is the same thing as the URI except the ip address.  Also, make sure the "x" is in litoshis (btc equivalent of satoshi’s).
+Opening a payment channel is how LN nodes pay one another.  Note that the pubkey is the same thing as the URI minus the ip address.  Also, make sure the "x" is in litoshis (btc equivalent of satoshi’s).
 
 Example:
 ```
@@ -84,7 +84,7 @@ $ lncli --chain=litecoin openchannel 0393b7f4ce23f9991059c7e6a87d9d3d5260c6d0561
 ```
 *FYI, the minimum amount required to fund a channel is currently set to 200000 litoshis.*
 
-If this fails, either the node you connected to is dead or you sent too little.  If it goes through, you must now wait for this tx to process on the Litecoin blockchain.  You should see that it is a “pending channel” if you type this in the terminal:
+If this fails, either the node you connected to is dead or you sent too little.  If it goes through, you must now wait for this tx to process on the Litecoin blockchain.  You should see that it is a “pending channel” with this command in the terminal:
 ```
 $ lncli --chain=litecoin pendingchannels
 ```
@@ -212,7 +212,7 @@ You can add a hex color to your node and payment channels that show up on a ln e
 ```
 color=#rrggbb
 ```
-It will take some time for it to update on the explorer.
+It will take some time for the explorer to be updated and your node color to be displayed.
 
 ## Set Routing Fees
 **For a specific channel:**
