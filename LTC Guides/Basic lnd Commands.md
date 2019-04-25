@@ -21,10 +21,11 @@ In order for lnd to function, litecoind needs to be running.  We will now go ove
 ```
 $ litecoind -daemon
 $ lnd
-Open a new terminal
-$ lncli unlock
-Enter password.
 ```
+Open a new terminal
+```$ lncli unlock
+```
+Enter password.
 **Stop lnd and litecoind**
 
 First shut down lnd:
