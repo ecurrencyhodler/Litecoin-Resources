@@ -23,7 +23,8 @@ $ litecoind -daemon
 $ lnd
 ```
 Open a new terminal
-```$ lncli unlock
+```
+$ lncli unlock
 ```
 Enter password.
 **Stop lnd and litecoind**
