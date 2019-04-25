@@ -27,6 +27,7 @@ Open a new terminal
 $ lncli unlock
 ```
 Enter password.
+
 **Stop lnd and litecoind**
 
 First shut down lnd:
