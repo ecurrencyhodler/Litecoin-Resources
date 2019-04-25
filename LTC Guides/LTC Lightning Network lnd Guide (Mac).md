@@ -1,5 +1,5 @@
 # LTC-Lightning-Network-lnd-Guide
-This is a step-by-step main net tutorial on how to setup a Lightning Network node for Litecoin on a Mac. It is specifically for the lnd client by the Lightning Labs.  You can copy and paste most of the commands except for the times I've **indicated in bold** for you to input your own information.  It would also be a good idea to backup your computer prior to starting just in case you need to start over.
+This is a step-by-step main net tutorial on how to setup a Lightning Network node for Litecoin on a Mac. It is specifically for the lnd client by the Lightning Labs.  You can copy and paste most of the commands except for when you need to input your own information.  It would also be a good idea to backup your computer prior to starting.
 
 Below is a legend.  Refer to it as you come across terms or symbols you don’t understand.  The first part of the tutorial is taken from the [lnd](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md) github.  However, everything else is written with the help of [Patrick Walters](https://twitter.com/pwkad) taking me step by step through the process.  
 
@@ -89,13 +89,13 @@ $ mkdir -p ~/Library/Application\ Support/Litecoin/
 $ echo -e "rpcuser=litecoinrpc\nrpcpassword=$(xxd -l 16 -p /dev/urandom)" > ~/Library/Application\ Support/Litecoin/litecoin.conf
 $ chmod 600 ~/Library/Application\ Support/Litecoin/litecoin.conf
 ```
-Next we have to edit the conf file we just created, so let’s open it:
+Next we have to edit the litecoin.conf file we just created, so let’s open it:
 ```
 $ open /Users/${USER}/Library/Application\ Support/Litecoin/
 ```
 Your finder window should pop up.  Select litecoin.conf in the “Litecoin” folder.  Open that with text edit by right clicking on litecoin.conf.  You may have to look for it in "other."  
 
-First, copy and paste the rpcuser and rpcpassword that's been automatically generated for you onto a separate word doc.  You will need them later for the lnd.conf file.  Then, copy the information below and paste it under your rpcuser and rpcpassword inside your litecoin.conf file.
+First, copy and paste the rpcuser and rpcpassword that's been automatically generated for you onto a separate word doc.  You will need them later for the lnd.conf file.  Then copy the information below and paste it under your rpcuser and rpcpassword inside your litecoin.conf file.
 ```
 txindex=1
 server=1
@@ -217,7 +217,7 @@ It should take about 10 minutes or so, depending on where you sent it from and w
 ### Connect and Open a Channel
 Alright, let’s create a channel!  
 
-First, go to this LN explorer: http://lnexplorer.hcwong.me/  Click on a node and find their URI that’s listed.  Now go to your terminal and type the follow command:
+First, go to this LN explorer: http://lnexplorer.hcwong.me/  Click on a node and find a URI that’s listed.  Now go to your terminal and type the follow command:
 ```
 $ lncli --chain=litecoin connect <URI>
 ```
